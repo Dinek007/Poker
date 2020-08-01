@@ -1,30 +1,29 @@
 import React from "react"
-import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles'
 
 import { Card } from "./card"
 
+const useStyles = makeStyles({
+    imageContainer: {
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "nowrap",
+        justifyContent: "center"
+    }
+});
+
 export const CardsComponent = ({ storeCards }) => {
+    const classes = useStyles();
 
     return (
-        <Grid
-            container
-            direction="row"
-            justify="center"
-            alignItems="center"
-            xs="12">
+        <div className={classes.imageContainer}>
             {
                 storeCards.map((val, index) => (
-                    <Grid xs="2"
-                        key={index}
-                        container
-                        direction="row"
-                        justify="center"
-                        alignItems="center"
-                    >
+                    <div key={index}>
                         <Card source={val} />
-                    </Grid>
+                    </div>
                 ))
             }
-        </Grid>
+        </div>
     )
 }

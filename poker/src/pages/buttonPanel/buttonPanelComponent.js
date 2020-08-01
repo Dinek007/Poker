@@ -1,27 +1,36 @@
 import React from "react"
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, createStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
 import { Buton } from "../../components/button"
+import { shadow } from "../../theme"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     button: {
-        position: "fixed",
-        right: "5%",
-        backgroundColor: "#B3AA66",
+        position: "absolute",
+        right: "7%",
+        backgroundColor: palette.secondary.main,
         float: "left",
-        boxShadow: '0 1px 5px 2px rgba(0, 0, 0, .9)',
+        boxShadow: shadow,
         borderRadius: 7,
         fontSize: "25px",
-        width: "10%"
+        width: "150px",
+        zIndex: 999,
+
     },
     buttonPlace: {
-        top: "20%",
+        top: "220px",
+        [breakpoints.down('sm')]: {
+            top: "200px",
+        },
     },
     buttonPass: {
-        top: "40%",
+        top: "300px",
+        [breakpoints.down('sm')]: {
+            top: "270px",
+        },
     }
-});
+}));
 
 
 export const ButtonPanelComponent = ({ buttonPlaceName, ChangeRound, round, ChangeButton, PassButton }) => {

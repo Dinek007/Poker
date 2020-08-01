@@ -1,68 +1,105 @@
 import React from "react"
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import { TextLabel } from "../../components/textLabel"
 import { InputLabel } from "../../components/inputLabel"
+import { shadow } from "../../theme"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     pool: {
-        position: "fixed",
-        left: "5%",
-        backgroundColor: "#B3AA66",
+        position: "absolute",
+        left: "7%",
+        backgroundColor: palette.secondary.dark,
         float: "left",
-        top: "20%",
-        boxShadow: '0 1px 5px 2px rgba(0, 0, 0, .9)',
+        top: "220px",
+        boxShadow: shadow,
         borderRadius: 7,
         fontSize: "25px",
-        width: "10%"
+        width: "180px",
+        [breakpoints.down('sm')]: {
+            width: "150px",
+            top: "210px",
+        },
     },
     player1Cash: {
-        position: "fixed",
-        left: "45%",
-        backgroundColor: "#B3AA66",
+        position: "absolute",
+        left: "50%",
+        transform: "translate(-100%, 0)",
+        zIndex: "999",
+        backgroundColor: palette.secondary.dark,
         float: "left",
-        bottom: "3%",
-        boxShadow: '0 1px 5px 2px rgba(0, 0, 0, .9)',
+        top: "855px",
+        boxShadow: shadow,
         borderRadius: 7,
-        width: "10%",
-        minWidth: "77px"
+        width: "180px",
+        [breakpoints.down('md')]: {
+            top: "1055px",
+        },
+        [breakpoints.down('sm')]: {
+            top: "915px",
+        },
     },
     player2Cash: {
-        position: "fixed",
-        left: "45%",
-        backgroundColor: "#B3AA66",
+        position: "absolute",
+        left: "50%",
+        transform: "translate(-100%, 0)",
+        zIndex: "999",
+        backgroundColor: palette.secondary.dark,
         float: "left",
-        top: "3%",
-        boxShadow: '0 1px 5px 2px rgba(0, 0, 0, .9)',
+        top: "30px",
+        boxShadow: shadow,
         borderRadius: 7,
-        width: "10%",
-        minWidth: "77px"
+        width: "180px",
     },
     poolAdd: {
-        position: "fixed",
-        left: "5%",
-        backgroundColor: "#B3AA66",
+        position: "absolute",
+        left: "7%",
+        backgroundColor: palette.secondary.dark,
         float: "left",
-        top: "40%",
-        boxShadow: '0 1px 5px 2px rgba(0, 0, 0, .9)',
+        top: "400px",
+        boxShadow: shadow,
         borderRadius: 7,
         fontSize: "25px",
-        width: "10%"
+        width: "180px",
+        [breakpoints.down('md')]: {
+            top: "690px",
+        },
+        [breakpoints.down('sm')]: {
+            top: "570px",
+            width: "130px",
+        },
     },
     player1Icon: {
-        position: "fixed",
-        top: "3%",
-        left: "58%",
+        position: "absolute",
+        top: "20px",
+        backgroundColor: palette.secondary.dark,
+        borderRadius: "20px",
+        padding: " 10px",
+        boxShadow: shadow,
+        left: "50%",
+        marginLeft: "20px",
         width: "100px"
     },
     player2Icon: {
-        position: "fixed",
-        bottom: "2%",
-        left: "58%",
-        width: "100px"
+        position: "absolute",
+        backgroundColor: palette.secondary.dark,
+        borderRadius: "20px",
+        padding: " 10px",
+        boxShadow: shadow,
+        top: "843px",
+        width: "100px",
+        left: "50%",
+        marginLeft: "20px",
+        marginBottom: "15px",
+        [breakpoints.down('md')]: {
+            top: "1045px",
+        },
+        [breakpoints.down('sm')]: {
+            top: "900px",
+        },
     },
-});
+}));
 
 export const BorderComponent = ({
     pool,
@@ -80,7 +117,7 @@ export const BorderComponent = ({
     return (
         <>
             <Grid className={classes.pool}>
-                <TextLabel text="POOL" value={pool} />
+                <TextLabel text="POOL" value2={pool} />
             </Grid>
             <Grid className={classes.player1Cash}>
                 <TextLabel value={player1Cash} value2={player1Debt} />

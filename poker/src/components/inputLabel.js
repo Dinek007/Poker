@@ -1,15 +1,15 @@
 import React from "react"
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import Button from '@material-ui/core/Button';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     button: {
         marginLeft: "0px",
         textAlign: "center",
         fontSize: "20px",
-        color: "#4A82AD",
+        color: palette.error.main,
         width: "100%",
         fontFamily: "Rockwell",
         minWidth: "88px"
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
         maxWidth: "400px",
         width: "100%",
     },
-});
+}));
 
 export const InputLabel = ({ text, value, changepool, round, addValue }) => {
     const classes = useStyles();

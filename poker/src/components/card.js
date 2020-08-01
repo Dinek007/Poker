@@ -1,12 +1,17 @@
 import React from "react"
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, createStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     image: {
-        width: "90%",
-        minWidth: "50px"
+        position: "relative",
+        float: "left",
+        width: "130px",
+        margin: '5px',
+        [breakpoints.down('sm')]: {
+            width: "70px",
+        },
     }
-});
+}));
 
 export const Card = (source) => {
     const classes = useStyles();

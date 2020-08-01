@@ -1,30 +1,40 @@
 import React from "react"
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import { CardsComponent } from "../../components/cardsList"
+import { shadow } from "../../theme"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     board: {
         textAlign: "center",
-        position: "fixed",
-        height: "60%",
-        top: "20%",
-        width: "60%",
-        left: "20%",
-        flexGrow: 1,
+        position: "absolute",
+        height: "630px",
+        top: "170px",
+        width: "55vw",
+        left: "50%",
+        transform: "translate(-50%, 0)",
         flexWrap: "wrap",
         display: "flex",
-        backgroundColor: "#B3AA66",
-        boxShadow: '0 1px 5px 2px rgba(0, 0, 0, .9)',
+        backgroundColor: palette.secondary.main,
+        boxShadow: shadow,
         borderRadius: 7,
+        [breakpoints.down('md')]: {
+            width: "90vw",
+            height: "830px",
+        },
+        [breakpoints.down('sm')]: {
+            height: "700px",
+        },
     },
     cardsContainer: {
         textAlign: 'center',
-        maxHeight: "33%",
         position: "relative",
+        [breakpoints.down('sm')]: {
+            top: "-30px"
+        },
     },
-});
+}));
 
 const DefaultGrid = ({ children, className }) => (
     <Grid xs="8" className={className}>{children}</Grid>

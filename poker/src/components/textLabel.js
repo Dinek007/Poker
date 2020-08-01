@@ -1,21 +1,22 @@
 import React from "react"
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     text: {
         marginLeft: "0px",
         textAlign: "center",
         fontSize: "25px",
         width: "100%",
+        color: palette.error.main,
         fontFamily: "Rockwell"
     },
     textPool: {
-        color: "#4A82AD",
+        color: palette.primary.main,
     },
     textDebt: {
-        color: "#B44B6A",
+        color: palette.error.main,
     },
     root: {
         maxWidth: "400px",
@@ -23,7 +24,7 @@ const useStyles = makeStyles({
         marginTop: "10px",
         marginBottom: "10px",
     },
-});
+}));
 
 export const TextLabel = ({ text, value, value2 }) => {
     const classes = useStyles();
@@ -31,7 +32,7 @@ export const TextLabel = ({ text, value, value2 }) => {
     return (
         <Grid className={classes.root} >
             <Typography className={classes.text}> {text} </Typography>
-            <Typography className={`${classes.text} ${classes.textPool}`}> {value} $ </Typography>
+            <Typography className={`${classes.text} ${classes.textPool}`}> {value} </Typography>
             <Typography className={`${classes.text} ${classes.textDebt}`}> {value2} </Typography>
         </Grid>
     )

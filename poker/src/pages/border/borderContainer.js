@@ -11,17 +11,18 @@ const useChangePool = () => {
 }
 
 export const BorderContainer = () => {
-    const borderProps = {
+    let borderProps = {
         playerIconSrc1: useSelector(store => store.playersIco[0]),
         playerIconSrc2: useSelector(store => store.playersIco[1]),
-        player1Cash: useSelector(store => store.playerCash[0]),
-        player2Cash: useSelector(store => store.playerCash[1]),
+        player1Cash: `${useSelector(store => store.playerCash[0])} $`,
+        player2Cash: `${useSelector(store => store.playerCash[1])} $`,
         player1Debt: `- ${useSelector(store => store.playerMinus[0])} $`,
         player2Debt: `- ${useSelector(store => store.playerMinus[1])} $`,
-        pool: useSelector(store => store.pool),
+        pool: `${useSelector(store => store.pool)} $`,
         round: useSelector(store => store.round),
         inputNames: useSelector(store => store.inputNames),
     }
+
     const changePool = useChangePool()
 
     return <BorderComponent {...borderProps} changePool={changePool} />
