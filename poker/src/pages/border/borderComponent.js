@@ -29,15 +29,15 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         zIndex: "999",
         backgroundColor: palette.secondary.dark,
         float: "left",
-        top: "855px",
+        top: "815px",
         boxShadow: shadow,
         borderRadius: 7,
         width: "180px",
         [breakpoints.down('md')]: {
-            top: "1055px",
+            top: "1015px",
         },
         [breakpoints.down('sm')]: {
-            top: "915px",
+            top: "875px",
         },
     },
     player2Cash: {
@@ -47,7 +47,7 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         zIndex: "999",
         backgroundColor: palette.secondary.dark,
         float: "left",
-        top: "30px",
+        top: "20px",
         boxShadow: shadow,
         borderRadius: 7,
         width: "180px",
@@ -63,16 +63,16 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         fontSize: "25px",
         width: "180px",
         [breakpoints.down('md')]: {
-            top: "690px",
+            top: "660px",
         },
         [breakpoints.down('sm')]: {
-            top: "570px",
+            top: "540px",
             width: "130px",
         },
     },
     player1Icon: {
         position: "absolute",
-        top: "20px",
+        top: "10px",
         backgroundColor: palette.secondary.dark,
         borderRadius: "20px",
         padding: " 10px",
@@ -87,16 +87,16 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         borderRadius: "20px",
         padding: " 10px",
         boxShadow: shadow,
-        top: "843px",
+        top: "800px",
         width: "100px",
         left: "50%",
         marginLeft: "20px",
         marginBottom: "15px",
         [breakpoints.down('md')]: {
-            top: "1045px",
+            top: "1000px",
         },
         [breakpoints.down('sm')]: {
-            top: "900px",
+            top: "860px",
         },
     },
 }));

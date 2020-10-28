@@ -10,7 +10,7 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         textAlign: "center",
         position: "absolute",
         height: "630px",
-        top: "170px",
+        top: "140px",
         width: "55vw",
         left: "50%",
         transform: "translate(-50%, 0)",
